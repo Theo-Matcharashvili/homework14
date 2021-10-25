@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>javascript</title>
+	</head>
+	<body>
+		<h5> 1. შექმენით 5 ელემენტიანი მასივი, რომლის თვითვეული ელემენტი არის რიცხვი, console.log გამოიტანეთ ამ მასივის ყველა ელემენტის ჯამი.</h5>
+		<p>myNumArrey=[1,20,35,3,40];</p>
+		<p>sum is</p>
+		<p id="sumOfElements"> </p>
+		<p id="sumOfElements2"> </p>
+		<br>
+		<h5> 2. შექმენით 3 ელემენტიანი მასივი, რომლის თვითვეული ელემენტი არის ობიექტი რომელსაც აქვს შემდეგი ველები (properties): name, age, address.</h5>
+		<p>the object arrey</p>
+		<p id="moa"></p>
+		<h5>3. console.log ში გამოიტანეთ 3 სტრინგი "My name is (#2 დავალების 0 ინდექსზე მყოფი ობიექტის ველი name ის მნიშვნელობა)", My age is (#2 დავალების 0 ინდექსზე მყოფი   ობიექტის ველი age ის მნიშვნელობა)", "My address is (#2 დავალების 0 ინდექსზე მყოფი  ობიექტის ველი address ის მნიშვნელობა)"</h5>
+		<p id="name"></p>
+		<p id="age"></p>
+		<p id="address"></p>
+		<h5> 4. დაწერეთ if / else statement სადაც შეამოწმებთ #2 დავალებაში  0 ინდექსზე მყოფი ობიექტში არსებულ age ველის მნიშვნელობას თუ ნაკლებია 19 ზე console.log ში დაბეჭდეთ "I am a teenager" დანარჩენ შემთხვევაში დაბეჭდეთ "I am an adult"</h5>
+		<p id=result></p>
+		<script>
+		// task 1
+			const myNumArrey=[1,20,35,3,40];
+			let sum = myNumArrey.reduce(myFunction);
+			function myFunction(total, item) {
+			  return total + item;	
+			  }
+			// how reduce works -it  runs myfunction on each array element to produce a single value. 
+			// how function works - total=sum+item=> 0+1 > 1+20 > 21+35 > and so on
+			document.getElementById("sumOfElements").innerHTML = sum;
+			//this is another way to sum the elements
+			document.getElementById("sumOfElements2").innerHTML =myNumArrey[0] +myNumArrey[1]+myNumArrey[2]+myNumArrey[3]+myNumArrey[4];
+			
+  		//task 2
+	  		const myObjectArrey=[{name:"Abbey", age:8, address:"US"}, {name:"Anna" , age:21 , address:"Germany" }, {name: "Mary ", age: 54 , address: "Georgia"}];	
+	  		document.getElementById("moa").innerHTML= "check the code"
+	  	//task 3	
+	  		document.getElementById("name").innerHTML="my name is " + myObjectArrey[0].name ;
+	  		document.getElementById("age").innerHTML="my age is " + myObjectArrey[0].age ;
+	  		document.getElementById("address").innerHTML="my address is " + myObjectArrey[0].address ;
+	  	//task4
+	  		if ((myObjectArrey[0].age)<19) {
+	  			print= "I am a teenager"
+	  		}
+	  		else 
+	  			print="I am an adult"
+
+			document.getElementById("result").innerHTML=print;
+		</script>
+	</body>
+</html>
